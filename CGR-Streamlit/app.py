@@ -221,16 +221,16 @@ elif option == "Upload the Sequences (.FASTA format)":
 elif option == "Select from existing files":
 	opt1 = st.radio('Radio', ["Animal Genome","COVID Virus Sequences"])
 	if opt1  == "Animal Genome":
-		path = "C:\\Users\\deept\\Desktop\\Sem 4\\Sem4 Projects\\IBS4 Project\\ANIMAL_GENOME\\"
+		path = "CGR-for-Sequence-Similarity-1/tree/main/CGR-Streamlit/ANIMAL_GENOME/"
 
 	elif opt1 == "COVID Virus Sequences":
-		path = "C:\\Users\\deept\\Desktop\\Sem 4\\Sem4 Projects\\IBS4 Project\\DNA_SEQ\\"
+		path = "CGR-for-Sequence-Similarity-1/tree/main/CGR-Streamlit/DNA_SEQ/"
 
 		
 	f = glob.glob(path+"*.fasta")
 	for i in range(0,len(f)):
 		ft = f[i]
-		f_names.append(ft[ft.rindex("\\")+1:len(ft)])
+		f_names.append(ft[ft.rindex("/")+1:len(ft)])
 
 	fileNames=st.multiselect('Multiselect', f_names)
 	for i in range(0,len(fileNames)):
